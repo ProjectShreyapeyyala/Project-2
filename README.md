@@ -1,7 +1,7 @@
 Realtime Election Voting System
 ===============================
-
-This repository contains the code for a realtime election voting system. The system is built using Python, Kafka, Spark Streaming, Postgres and Streamlit. The system is built using Docker Compose to easily spin up the required services in Docker containers.
+In this repository we has the code for realtime voting system. We have used technologies like Python , Kafka, Spark Streaming , Postgres and for dashboard creation used Streamlit.  
+The system is built using Docker Compose to easily spin up the required services in Docker containers.
 
 ## System Architecture
 ![system_architecture.jpg](images%2Fsystem_architecture.jpg)
@@ -23,11 +23,7 @@ This Docker Compose file allows you to easily spin up Zookkeeper, Kafka and Post
 - Docker Compose installed on your machine
 - Docker installed on your machine
 
-
-### Steps to Run
-1. Clone this repository.
-2. Navigate to the root containing the Docker Compose file.
-3. Run the following command:
+Please run the below command to run containers in the docker 
 
 ```bash
 docker-compose up -d
