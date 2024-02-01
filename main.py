@@ -7,7 +7,7 @@ from confluent_kafka import SerializingProducer
 
 BASE_URL = 'https://randomuser.me/api/?nat=gb'
 PARTIES = ["Management Party", "Savior Party", "Tech Republic Party"]
-random.seed(42)
+random.seed(21)
 
 
 def generate_voter_data():
