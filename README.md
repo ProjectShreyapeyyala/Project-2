@@ -51,7 +51,7 @@ streamlit run streamlit-app.py
 ![voters.png](images%2Fvoters.png)
 
 ### Voting
-![voting.png](images%2Fvoting.png)
+![votingg.png](images%2Fvoting.png)
 
 ### Dashboard
 ![dashboard_image.png](images%2Fdashboard_image.png)
