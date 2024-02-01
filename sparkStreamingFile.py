@@ -76,7 +76,7 @@ if __name__ == "__main__":
         .format("kafka") \
         .option("kafka.bootstrap.servers", "localhost:9092") \
         .option("topic", "aggregated_votes_per_candidate") \
-        .option("checkpointLocation", "/Users/saipe/Downloads/Project_one_Data_Engineering/votingSystem/checkpoints/checkpoint1") \
+        .option("checkpointLocation", "/Project_one_Data_Engineering/votingSystem/checkpoints/checkpoint1") \
         .outputMode("update") \
         .start()
 
@@ -85,7 +85,7 @@ if __name__ == "__main__":
         .format("kafka") \
         .option("kafka.bootstrap.servers", "localhost:9092") \
         .option("topic", "aggregated_turnout_by_location") \
-        .option("checkpointLocation", "/Users/saipe/Downloads/Project_one_Data_Engineering/votingSystem/checkpoints/checkpoint2") \
+        .option("checkpointLocation", "/Project_one_Data_Engineering/votingSystem/checkpoints/checkpoint2") \
         .outputMode("update") \
         .start()
 
@@ -93,12 +93,14 @@ if __name__ == "__main__":
     votes_per_candidate_to_kafka.awaitTermination()
     turnout_by_location_to_kafka.awaitTermination()
 
+
+##################################
     # candidate_schema = StructType([
     # ])
     #
     # voter_schema = StructType([
     # ])
-
+    #
     # read candidate data from postgres
     # candidates_df = spark.read \
     #     .format("jdbc") \
@@ -119,7 +121,7 @@ if __name__ == "__main__":
     #     .option("password", "postgres") \
     #     .option("driver", "org.postgresql.Driver") \
     #     .load()
-
+    #
     # voters_df = spark \
     #     .readStream \
     #     .format("kafka") \
@@ -131,7 +133,7 @@ if __name__ == "__main__":
     #     .select(from_json(col("value"), voter_schema).alias("data")) \
     #     .select("data.*")
     #
-
+    #
     # # Perform joins
     # enriched_votes_df = votes_df.alias("vote").join(voters_df.alias("voter"),
     #                                                 expr("vote.voter_id == voter.voter_id"), "inner") \
@@ -152,11 +154,11 @@ if __name__ == "__main__":
     # turnout_by_gender = enriched_votes_df.groupBy("gender").agg(count("*").alias("total_votes"))
     #
     # # Voter turnout by location
-
+    #
     # party_wise_votes = enriched_votes_df.groupBy("party_affiliation").agg(count("*").alias("total_votes"))
     #
     # votes_by_region = enriched_votes_df.groupBy("address.city").agg(count("*").alias("total_votes"))
-
+    #
     # Write to Kafka
     # enriched_votes_to_kafka = enriched_votes_df.selectExpr("to_json(struct(*)) AS value") \
     #     .writeStream \

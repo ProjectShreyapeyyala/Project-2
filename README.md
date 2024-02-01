@@ -35,16 +35,18 @@ python voting.py
 4. Consuming the voting data from Kafka topic, enriching the data from Postgres and producing data to specific topics on Kafka:
 
 ```bash
-python spark-streaming.py
+python sparkStreamingFile.py
 ```
 
 5. Running the Streamlit app:
 
 ```bash
-streamlit run streamlit-app.py
+streamlit run FrontEnd-streamlitApp.py
 ```
 
 ## Output
+Tables created in DB 
+![Tables.png](images%2FTables.png)
 ### Candidates and Parties information
 ![candidates_and_party.png](images/candidates_and_party.png)
 ### Voters
